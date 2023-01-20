@@ -4,8 +4,8 @@ import Image from 'next/image';
 import buttonAddToCart from '@/icons/bt_add_to_cart.svg';
 import styles from '@/styles/ProductItem.module.scss';
 
-const ProductItem: object = ({ product }) => {
-  const { addToCart } = useContext(AppContext);
+const ProductItem = ({ product }: any) => {
+  const { addToCart }: any = useContext(AppContext);
 
   const handleClick = (item: unknown) => {
     addToCart(item);
@@ -22,7 +22,7 @@ const ProductItem: object = ({ product }) => {
       <div className={styles['product-info']}>
         <p>{product.price}$</p>
         <p>{product.title}</p>
-        <figure onClick={() => handleClick(product)}>
+        <figure onClick={() => handleClick(product)} role="presentation">
           <Image src={buttonAddToCart} alt="cart" />
         </figure>
       </div>

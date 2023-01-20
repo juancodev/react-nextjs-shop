@@ -5,7 +5,7 @@ import styles from '@/styles/ProductList.module.scss';
 
 const API = 'https://api.escuelajs.co/api/v1/products';
 
-const ProductList = () => {
+const ProductList: React.FunctionComponent = () => {
   const products: object[] = useGetProducts(API);
   return (
     <section className={styles['main-container']}>

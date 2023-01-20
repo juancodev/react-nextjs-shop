@@ -87,6 +87,10 @@
   margin-bottom: 30px;
 }
 
+.border-test {
+  border: 1px solid red;
+}
+
 @media (max-width: 640px) {
   .logo {
     display: block;

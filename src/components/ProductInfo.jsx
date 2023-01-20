@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import 'styles/ProductInfo';
 
 const ProductInfo = () => {
@@ -16,6 +16,6 @@ const ProductInfo = () => {
       </div>
     </>
   );
-}
+};
 
 export { ProductInfo };

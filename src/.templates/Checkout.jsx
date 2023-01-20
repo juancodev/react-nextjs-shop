@@ -21,6 +21,6 @@ const Checkout = () => {
       </div>
     </div>
   );
-}
+};
 
 export { Checkout };

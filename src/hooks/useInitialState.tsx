@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const initialState: object = {
   cart: [],
 };
 
 const useInitialState = () => {
-  const [state, setState] = useState(initialState);
+  const [state, setState]: any = useState(initialState);
 
   const addToCart = (payload: unknown) => {
     setState({
@@ -14,10 +14,10 @@ const useInitialState = () => {
     });
   };
 
-  const removeFromCart = (indexValue) => {
+  const removeFromCart = (indexValue: number) => {
     setState({
       ...state,
-      cart: state.cart.filter((_, index) => index !== indexValue),
+      cart: state.cart.filter((_: unknown, index: number) => index !== indexValue),
     });
   };
 

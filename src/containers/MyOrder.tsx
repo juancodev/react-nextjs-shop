@@ -7,7 +7,7 @@ import arrow from '@/icons/flechita.svg';
 import styles from '@/styles/MyOrder.module.scss';
 
 const MyOrder = () => {
-  const { state } = useContext(AppContext);
+  const { state }: any = useContext(AppContext);
 
   const sumTotal = (): number => {
     const reducer = (accumulator: number, currentValue: any): number => {
@@ -24,7 +24,7 @@ const MyOrder = () => {
         <p className={styles.title}>My order</p>
       </div>
       <div className={styles['my-order-content']}>
-        {state.cart.map((product, indexValue) => {
+        {state.cart.map((product: any, indexValue: number) => {
           return <OrderItem indexValue={indexValue} product={product} key={`orderItem-${product.id}`} />;
         })}
         <div className={styles.order}>

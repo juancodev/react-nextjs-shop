@@ -21,6 +21,6 @@ const SendEmail = () => {
       </div>
     </div>
   );
-}
+};
 
 export { SendEmail };

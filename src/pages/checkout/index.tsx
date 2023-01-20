@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import OrderItem from '@/components/OrderItem';
-// import { Menu } from 'components/Menu';
 import AppContext from '@/context/AppContext';
 import styles from '@/styles/Checkout.module.scss';
 
 const Checkout = () => {
-  const { state } = useContext(AppContext);
+  const { state }: any = useContext(AppContext);
+  console.log({ state });
   return (
     <div className={styles.Checkout}>
       <div className={styles['Checkout-container']}>
@@ -13,13 +13,13 @@ const Checkout = () => {
         <div className={styles['Checkout-content']}>
           <div className={styles.order}>
             <p>
-              <span>03.25.21</span>
+              <span>{state.cart[0]?.creationAt}</span>
               <span>6 articles</span>
             </p>
-            <p>$560.00</p>
+            <p>{state.cart[0]?.price}</p>
           </div>
         </div>
-        <OrderItem />
+        <OrderItem product={state.cart[0]} indexValue={state.cart[0]?.id} />
       </div>
     </div>
   );

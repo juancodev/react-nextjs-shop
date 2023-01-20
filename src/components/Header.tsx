@@ -13,14 +13,15 @@ import styles from '@/styles/Header.module.scss';
 const Header = () => {
   const [toggle, setToggle] = useState(false);
   const [toggleOrders, setToggleOrders] = useState(false);
-  const { state } = useContext(AppContext);
+  const { state }: any = useContext(AppContext);
 
   const handleToggle = () => {
     setToggle(!toggle);
   };
+
   return (
     <nav className={styles.Nav}>
-      <Image src={menuIcon} alt="menu" className={styles.menu} />
+      <Image src={menuIcon.src} alt="menu" className={styles.menu} width={50} height={50} />
 
       <div className={styles['navbar-left']}>
         <Link href="/">
@@ -29,33 +30,33 @@ const Header = () => {
 
         <ul>
           <li>
-            <a href="/">All</a>
+            <Link href="/">All</Link>
           </li>
           <li>
-            <a href="/">Clothes</a>
+            <Link href="/">Clothes</Link>
           </li>
           <li>
-            <a href="/">Electronics</a>
+            <Link href="/">Electronics</Link>
           </li>
           <li>
-            <a href="/">Furnitures</a>
+            <Link href="/">Furnitures</Link>
           </li>
           <li>
-            <a href="/">Toys</a>
+            <Link href="/">Toys</Link>
           </li>
           <li>
-            <a href="/">Others</a>
+            <Link href="/">Others</Link>
           </li>
         </ul>
       </div>
 
       <div className={styles['navbar-right']}>
         <ul>
-          <li className={styles['navbar-email']} onClick={handleToggle}>
+          <li className={styles['navbar-email']} onClick={handleToggle} role="presentation">
             montillasanchezjuancarlos@gmail.com
             <Image src={downArrow} alt="dropdown" />
           </li>
-          <li className={styles['navbar-shopping-cart']} onClick={() => setToggleOrders(!toggleOrders)}>
+          <li className={styles['navbar-shopping-cart']} onClick={() => setToggleOrders(!toggleOrders)} role="presentation">
             <Image src={shoppingCart} alt="" />
             {state?.cart.length > 0 ? <div>{state.cart.length > 9 ? `+9` : state.cart.length}</div> : null}
           </li>

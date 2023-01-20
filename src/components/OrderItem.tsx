@@ -4,8 +4,8 @@ import Image from 'next/image';
 import closeIcon from '@/icons/icon_close.png';
 import styles from '@/styles/OrderItem.module.scss';
 
-const OrderItem = ({ product, indexValue }) => {
-  const { removeFromCart } = useContext(AppContext);
+const OrderItem = ({ product, indexValue }: any) => {
+  const { removeFromCart }: any = useContext(AppContext);
 
   const handleRemove = (product: unknown) => {
     removeFromCart(product);

@@ -9,31 +9,30 @@ const Login = () => {
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    const formData = new FormData(form.current);
-    const data = {
-      username: formData.get('email'),
-      password: formData.get('password'),
-    };
-    console.log(data);
+    // const formData = new FormData(form.current);
+    // const data = {
+    //   username: formData.get('email'),
+    //   password: formData.get('password'),
+    // };
+    // console.log(data);
   };
   return (
     <div className={styles.Login}>
-      {/* eslint-disable-next-line prettier/prettier, prettier/prettier*/}
-      <div className={(styles['Login-container'], styles['border-test'])}>
+      <div className={`${styles['Login-container']}`}>
         <Image src={logo} alt="logo" className={styles.logo} />
 
         <form action="/" className={styles.form} ref={form}>
           <label htmlFor="email" className={styles.label}>
             Email address
           </label>
-          <input type="email" name="email" placeholder="juan@example.com" className={(styles['input'], styles['input-email'])} />
+          <input type="email" name="email" placeholder="juan@example.com" className={`${styles.input} ${styles['input-email']}`} />
 
           <label htmlFor="password" className={styles.label}>
             Password
           </label>
-          <input type="password" name="password" placeholder="*********" className={(styles['input'], styles['input-password'])} />
+          <input type="password" name="password" placeholder="*********" className={`${styles['input']} ${styles['input-password']}`} />
 
-          <button className={(styles['primary-button'], styles['login-button'])} onClick={handleSubmit}>
+          <button className={`${styles['primary-button']} ${styles['login-button']}`} onClick={handleSubmit}>
             Log in
           </button>
           <Link href="/">Forgot my password</Link>
