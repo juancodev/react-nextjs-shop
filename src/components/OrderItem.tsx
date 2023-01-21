@@ -16,7 +16,7 @@ const OrderItem = ({ product, indexValue }: any) => {
         <Image src={product?.images[0]} className="product-img" alt={product?.title} width={50} height={50} />
       </figure>
       <p>{product?.title}</p>
-      <p>{product?.price}</p>
+      <p>${product?.price}</p>
       <Image src={closeIcon} alt="close" onClick={() => handleRemove(indexValue)} />
     </div>
   );

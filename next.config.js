@@ -1,19 +1,15 @@
 /** @type {import("next").NextConfig} */
-const path = require('path');
-const withPWA = require('next-pwa')({
-  dest: 'public',
-  disable: false,
-  register: true,
-  mode: 'production',
-});
+// const withPWA = require('next-pwa')({
+//   dest: 'public',
+//   disable: false,
+//   register: true,
+//   mode: 'production',
+// });
 
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
     appDir: true,
-  },
-  sassOptions: {
-    includePaths: [path.join(__dirname, 'styles')],
   },
   images: {
     domains: [
@@ -43,6 +39,7 @@ const nextConfig = {
       'qrius.com',
       'hips.hearstapps.com',
       'images.unsplash.com',
+      'lorem.picsum',
     ],
   },
   // env: {
@@ -61,4 +58,5 @@ const nextConfig = {
   // },
 };
 
-module.exports = withPWA({ nextConfig });
+// module.exports = withPWA({ nextConfig });
+module.exports = nextConfig;
