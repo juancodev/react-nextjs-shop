@@ -2,9 +2,13 @@
 
 .ProductDetail {
   width: 360px;
+  height: 617px;
   padding-bottom: 24px;
   position: absolute;
   right: 0;
+  top: 60px;
+  background-color: vars.$white;
+  position: fixed;
 }
 
 .ProductDetail-close {

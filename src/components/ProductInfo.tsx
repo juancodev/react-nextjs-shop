@@ -12,7 +12,7 @@ const ProductInfo = () => {
     <>
       <Image src={productCurrent.images[0]} alt={productCurrent.title} width={400} height={400} />
       <div className={styles.ProductInfo}>
-        <p>{productCurrent.price}</p>
+        <p>${productCurrent.price}</p>
         <p>{productCurrent.title}</p>
         <p>{productCurrent.description}</p>
         <button className={`${styles['primary-button']} ${styles['add-to-cart-button']}`} onClick={() => addToCart(productCurrent)}>

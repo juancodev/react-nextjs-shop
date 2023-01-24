@@ -32,6 +32,7 @@ const ProductList: React.FunctionComponent = () => {
             product.images[0] !== 'next.png' &&
             product.images[0] !== 'again.png' &&
             product.images[0] !== 'explorar-bg-img.png' &&
+            product.images[0] !== 'akjsjaks.com' &&
             !product.images[0].includes('https://cdn1.coppel.com/images/catalog/pm/')
           ) {
             return <ProductItem handleDetailToggle={handleDetailToggle} product={product} key={product.id} />;

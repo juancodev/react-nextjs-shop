@@ -27,7 +27,7 @@ const ProductItem = ({ handleDetailToggle, product }: any) => {
         </div>
       </figure>
       <div className={styles['product-info']}>
-        <p>{product.price}$</p>
+        <p>${product.price}</p>
         <p>{product.title}</p>
         <figure onClick={() => handleClick(product)} role="presentation">
           <Image src={buttonAddToCart} alt="cart" />
