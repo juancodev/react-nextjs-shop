@@ -1,7 +1,6 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Layout from '@/containers/Layout';
-import Header from '@/components/Header';
 import AppContext from '@/context/AppContext';
 import useInitialState from '@/hooks/useInitialState';
 import { Open_Sans } from '@next/font/google';
@@ -19,7 +18,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <link rel="manifest" href="/manifest.json" />
       </Head>
       <Layout className={openSans.className}>
-        <Header />
         <Component {...pageProps} />
       </Layout>
     </AppContext.Provider>

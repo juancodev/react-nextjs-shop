@@ -2,10 +2,11 @@ import React, { useContext } from 'react';
 import AppContext from '@/context/AppContext';
 import Image from 'next/image';
 import buttonAddToCart from '@/icons/bt_add_to_cart.svg';
+import buttonAddedToCart from '@/icons/bt_added_to_cart.svg';
 import styles from '@/styles/ProductItem.module.scss';
 
 const ProductItem = ({ handleDetailToggle, product }: any) => {
-  const { addToCart, addToDetail }: any = useContext(AppContext);
+  const { addToCart, addToDetail, state }: any = useContext(AppContext);
 
   const handleClick = (item: unknown) => {
     addToCart(item);
@@ -30,7 +31,11 @@ const ProductItem = ({ handleDetailToggle, product }: any) => {
         <p>${product.price}</p>
         <p>{product.title}</p>
         <figure onClick={() => handleClick(product)} role="presentation">
-          <Image src={buttonAddToCart} alt="cart" />
+          {state.cart.includes(product) ? (
+            <Image className={`${styles.disabled} ${styles['add-to-cart-btn']}`} src={buttonAddedToCart} alt="added to cart" />
+          ) : (
+            <Image className={`${styles['add-to-cart-btn']} ${styles.pointer}`} src={buttonAddToCart} alt="add to cart" />
+          )}
         </figure>
       </div>
     </div>

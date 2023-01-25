@@ -9,12 +9,16 @@ const Login = () => {
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    // const formData = new FormData(form.current);
-    // const data = {
-    //   username: formData.get('email'),
-    //   password: formData.get('password'),
-    // };
-    // console.log(data);
+    const formData = new FormData(form.current || undefined);
+    const data = {
+      username: formData.get('email'),
+      password: formData.get('password'),
+    };
+
+    if (data.username === '' || data.password === '') {
+      alert('Required fields');
+    }
+    console.log(data);
   };
   return (
     <div className={styles.Login}>

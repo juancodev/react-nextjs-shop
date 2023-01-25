@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import useGetProducts from '@/hooks/useGetProducts';
 import ProductItem from '@/components/ProductItem';
 import ProductDetail from '@/containers/ProductDetail';
+import SkeletonLoader from '@/components/SkeletonLoader';
 import styles from '@/styles/ProductList.module.scss';
 
 const API = 'https://api.escuelajs.co/api/v1/products';
 
 const ProductList: React.FunctionComponent = () => {
-  const products: object[] = useGetProducts(API);
+  const [products, loading]: object[] | any[] = useGetProducts(API);
   const [detailToggle, setDetailToggle]: any = useState(false);
   const handleDetailToggle = (action: string) => {
     action === 'open' ? setDetailToggle(true) : setDetailToggle(false);
@@ -33,13 +34,16 @@ const ProductList: React.FunctionComponent = () => {
             product.images[0] !== 'again.png' &&
             product.images[0] !== 'explorar-bg-img.png' &&
             product.images[0] !== 'akjsjaks.com' &&
+            product.images[0] !== 'pic2.png' &&
             !product.images[0].includes('https://cdn1.coppel.com/images/catalog/pm/')
           ) {
             return <ProductItem handleDetailToggle={handleDetailToggle} product={product} key={product.id} />;
           }
         })}
       </div>
+      {!!loading && <SkeletonLoader />}
       {detailToggle && <ProductDetail handleDetailToggle={handleDetailToggle} />}
+      {console.log(loading)}
     </section>
   );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
-import ProductList from '@/containers/ProductList';
 import Head from 'next/head';
+import ProductList from '@/containers/ProductList';
+import Header from '@/components/Header';
 
 const index = () => {
   return (
@@ -8,6 +9,7 @@ const index = () => {
       <Head>
         <title>React Shop</title>
       </Head>
+      <Header />
       <ProductList />
     </>
   );

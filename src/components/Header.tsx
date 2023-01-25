@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Menu from '@/components/Menu';
 import MyOrder from '@/containers/MyOrder';
+import MenuMobile from '@/components/MenuMobile';
 import menuIcon from '@/icons/icon_menu.svg';
 import logo from '@/logos/logo_yard_sale.svg';
 import shoppingCart from '@/icons/icon_shopping_cart.svg';
@@ -13,16 +14,21 @@ import styles from '@/styles/Header.module.scss';
 const Header = () => {
   const [toggle, setToggle] = useState(false);
   const [toggleOrders, setToggleOrders] = useState(false);
+  const [toggleMenu, setToggleMenu]: any = useState(false);
   const { state }: any = useContext(AppContext);
 
   const handleToggle = () => {
     setToggle(!toggle);
   };
 
+  const handleToggleMenu = () => {
+    setToggleMenu(!toggleMenu);
+  };
+
   return (
     <>
       <nav className={styles.Nav}>
-        <Image src={menuIcon.src} alt="menu" className={styles.menu} width={50} height={50} />
+        <Image src={menuIcon.src} alt="menu" className={styles.menu} width={25} height={25} onClick={handleToggleMenu} />
 
         <div className={styles['navbar-left']}>
           <Link href="/">
@@ -65,6 +71,7 @@ const Header = () => {
         </div>
         {toggle && <Menu />}
         {toggleOrders && <MyOrder />}
+        {toggleMenu && <MenuMobile />}
       </nav>
     </>
   );

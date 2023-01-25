@@ -40,6 +40,7 @@ const nextConfig = {
       'hips.hearstapps.com',
       'images.unsplash.com',
       'lorem.picsum',
+      'static.platzi.com',
     ],
   },
   // env: {

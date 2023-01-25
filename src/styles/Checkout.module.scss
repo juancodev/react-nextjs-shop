@@ -53,3 +53,9 @@
   text-align: end;
   font-weight: bold;
 }
+
+@media (max-width: 640px) {
+  .Checkout-container {
+    place-items: center;
+  }
+}
